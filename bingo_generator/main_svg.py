@@ -51,7 +51,7 @@ def fit_text_to_cell(text, font_path, max_width, max_height):
         font_size -= 1
     return wrap_text_svg(text, ImageFont.truetype(font_path, font_size), max_width), font_size
 
-def create_bingo_card(title, elements, output_filename, gradient_colors=("lightblue", "lightpink"), table_bg_color="white", main_border_width=5, inner_border_width=2, corner_radius=30, font_path="Oldtimer.ttf"):
+def create_bingo_card(title, elements, output_filename, gradient_colors=("lightblue", "lightpink"), table_bg_color="white", main_border_width=5, inner_border_width=2, corner_radius=30, font_path="fonts/Oldtimer.ttf"):
     size = int(len(elements) ** 0.5)  # Определяем размер таблицы (например, 5x5)
     assert size * size == len(elements), "Количество элементов должно быть квадратом целого числа."
 
@@ -124,9 +124,11 @@ title = "Guilty pleasure"
 elements = [
     "Проводить время в соцсетях, прокручивая ленту в течение часов", "Ловить фиксацию на сериалах/ персонажах/ реальных людях", "Следить за жизнью блогеров и инфлюенсеров", "петь в караоке, несмотря на отсутствие вокальных данных", "смотреть мелодрамы и романтические фильмы (ромком/ подростковые фильмы про любовь)",
     "покупать и коллекционировать игрушки или предметы", "читать легкую литературу (фанфики/ фэнтези/ поп-литература)", "слушать поп-песни, рэп, к-поп", "представлять сценарии возможных событий с людьми, которые вам симпатизируют", "следить за человеком в соц сетях (его подписки/ музыка/ сообщества/ кого лайкает и тд)",
-    "изучать астрологию, знаки зодиака, смотреть шоу, связанные с этой темой", "учиться в школеы", "разработка собственного кода и программного обеспечения", "смотреть реалити-шоу или уральских пельменей", "покупать подписки на стримеров/ мерч у блогеров",
+    "изучать астрологию, знаки зодиака, смотреть шоу, связанные с этой темой", "учиться в школе", "разработка собственного кода и программного обеспечения", "смотреть реалити-шоу или уральских пельменей", "покупать подписки на стримеров/ мерч у блогеров",
     "заказывать еду на дом, даже если можно было бы приготовить дома", "смотреть аниме", "покупать дорогие кофейные напитки, вместо того чтобы приготовить дома", "слушать грустные песни, чтобы стало ещё хуже", "романтизировать свою жизнь или какие-то события",
     "посещать какие-то мероприятия, скрывая это от окружающих", "предпочтения в сексе/сексуальные фантазии, которые в обществе считаются странными", "любить быть в курсе сплетен", "забирать из заведений/отелей бесплатные вещи (салфетки/ шампуни/ пакетики с сахаром и тд)", "перечитывать старые переписки"
 ]
 output_filename = "bingo_card_guilty_pleasure.svg"
-create_bingo_card(title, elements, output_filename, gradient_colors=("#FFE1E1", "#9A8888"), table_bg_color="#E6CFE2", main_border_width=5, inner_border_width=2, corner_radius=30, font_path="Oldtimer.ttf")
+fonts_path = 'bingo_generator/fonts/Oldtimer.ttf'
+
+create_bingo_card(title, elements, output_filename, gradient_colors=("#FFE1E1", "#9A8888"), table_bg_color="#E6CFE2", main_border_width=5, inner_border_width=2, corner_radius=30, font_path=fonts_path)
